@@ -50,6 +50,11 @@ const Contact = () => {
                 <p><strong>Email:</strong> rdmfr59@gmail.com</p>
                 <p><strong>Location:</strong> Bandung, Indonesia</p>
               </div>
+              <div className="contact-socials">
+                <a href="#" target="_blank" rel="noopener noreferrer"><i className="devicon-github-original"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><i className="devicon-linkedin-plain"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><i className="devicon-twitter-original"></i></a>
+              </div>
             </div>
             
             {/* Formulir digabungkan dengan logika EmailJS */}

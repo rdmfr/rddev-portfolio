@@ -1,11 +1,34 @@
 .portfolio {
     padding-top: 120px;
-    min-height: 100vh;
+    padding-bottom: 6rem;
 }
 
-.portfolio-title-wrapper {
+.portfolio-header {
     text-align: center;
     margin-bottom: 4rem;
+}
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.portfolio-filters button {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.portfolio-filters button.active, .portfolio-filters button:hover {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
 }
 
 .portfolio-grid {
@@ -19,12 +42,14 @@
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px var(--shadow-color);
+    cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.2);
 }
 
 .portfolio-image {
@@ -36,50 +61,18 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
 }
 
-.portfolio-card:hover .portfolio-image img {
-    transform: scale(1.05);
-}
-
-.portfolio-overlay {
+.portfolio-category {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(229, 9, 20, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.portfolio-card:hover .portfolio-overlay {
-    opacity: 1;
-}
-
-.portfolio-links a {
-    color: white;
-    font-size: 2rem;
-    margin: 0 1rem;
-    transform: translateY(20px);
-    opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.portfolio-card:hover .portfolio-links a {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.portfolio-card:hover .portfolio-links a:nth-child(1) {
-    transition-delay: 0.1s;
-}
-.portfolio-card:hover .portfolio-links a:nth-child(2) {
-    transition-delay: 0.2s;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
 .portfolio-content {
@@ -88,10 +81,105 @@
 
 .portfolio-title {
     font-size: 1.4rem;
-    margin-bottom: 0.5rem;
 }
 
-.portfolio-description {
+/* Modal Styles */
+@keyframes modal-overlay-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modal-content-slide-in {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: modal-overlay-fade-in 0.3s ease;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    border-radius: 15px;
+    overflow-y: auto;
+    position: relative;
+    animation: modal-content-slide-in 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
     color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.modal-header {
+    height: 300px;
+}
+
+.modal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-body h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.modal-body p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.modal-technologies h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.tech-tag {
+    background: rgba(0, 123, 255, 0.1);
+    color: var(--primary-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
     font-size: 0.9rem;
+}
+
+.modal-links {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.modal-links .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }

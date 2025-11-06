@@ -91,14 +91,73 @@
 
 .home-image img {
     max-width: 350px;
-    /* --- PERUBAHAN DI SINI --- */
-    border-radius: 15px; /* Mengubah dari 50% menjadi 15px untuk sudut yang sedikit membulat, atau 0 untuk sudut tajam */
-    border: 3px solid var(--primary-color); /* Mengurangi ketebalan border agar lebih halus */
-    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6); /* Mengurangi intensitas shadow agar tidak terlalu terang */
-    object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi */
-    aspect-ratio: 1/1; /* Menjaga rasio aspek persegi agar tidak terlalu memanjang */
+    border-radius: 15px;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+    object-fit: cover;
+    aspect-ratio: 1/1;
 }
 
+.skills-section {
+    padding: 6rem 0;
+    background-color: var(--background-start);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.skill-category h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.skill-category ul {
+    list-style: none;
+}
+
+.skill-category li {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.skill-category li::before {
+    content: '\2713';
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-weight: bold;
+}
 
 @keyframes slideInLeft {
     from {
@@ -146,7 +205,7 @@
     }
     .home-image img {
         max-width: 250px;
-        border-radius: 10px; /* Menyesuaikan untuk ukuran mobile */
+        border-radius: 10px;
     }
     .home-subtitle {
         margin: 1rem auto 2rem;

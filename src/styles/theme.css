@@ -1,0 +1,29 @@
+
+:root {
+  --primary-color: #007BFF; /* Biru profesional yang cerah */
+  --secondary-color: #6C757D; /* Abu-abu netral untuk teks sekunder */
+  --background-start: #FFFFFF; /* Latar belakang putih bersih */
+  --background-end: #F8F9FA;   /* Latar belakang sedikit abu-abu untuk kontras */
+  --text-color: #212529;       /* Teks gelap untuk keterbacaan maksimal */
+  --text-secondary: #6C757D;  /* Teks abu-abu untuk detail tambahan */
+  --border-color: #DEE2E6;    /* Border halus untuk pemisah */
+  --card-bg: #FFFFFF;         /* Latar belakang kartu yang bersih */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Bayangan halus untuk kedalaman */
+
+  /* Font Styles */
+  --font-sans: 'Poppins', sans-serif; /* Font modern dan mudah dibaca */
+  --font-mono: 'Roboto Mono', monospace;
+}
+
+/* Dark Mode (Opsional, jika ingin ditambahkan nanti) */
+[data-theme='dark'] {
+  --primary-color: #3a9cff;
+  --secondary-color: #adb5bd;
+  --background-start: #121212;
+  --background-end: #1a1a1a;
+  --text-color: #e9ecef;
+  --text-secondary: #adb5bd;
+  --border-color: #343a40;
+  --card-bg: #1e1e1e;
+  --shadow-color: rgba(255, 255, 255, 0.05);
+}
