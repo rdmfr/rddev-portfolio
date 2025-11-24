@@ -159,6 +159,11 @@
     font-weight: bold;
 }
 
+.featured-projects-section {
+    padding: 6rem 0;
+}
+
+
 @keyframes slideInLeft {
     from {
         opacity: 0;

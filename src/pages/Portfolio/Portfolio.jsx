@@ -2,39 +2,98 @@ import React, { useState } from 'react';
 import './Portfolio.css';
 import AnimatedPage from '../../components/AnimatedPage';
 import { motion, AnimatePresence } from 'framer-motion';
-import PortfolioImg1 from '../../assets/portfolio-1.jpg';
-import PortfolioImg2 from '../../assets/portfolio-2.jpg';
-import PortfolioImg3 from '../../assets/portfolio-3.jpg';
+import SkolaOneDashAdmin from '../../../Portfolio/SkolaOne/dash-admin.png';
+import SkolaOneDashAdmin1 from '../../../Portfolio/SkolaOne/dash-admin1.png';
+import SkolaOneDashAdmin2 from '../../../Portfolio/SkolaOne/dash-admin2.png';
+import SkolaOneDashAdmin3 from '../../../Portfolio/SkolaOne/dash-admin3.png';
+import SkolaOneDashGuru from '../../../Portfolio/SkolaOne/dash-guru.png';
+import SkolaOneDashWali from '../../../Portfolio/SkolaOne/dash-wali.png';
+import SkolaOneLoginAdmin from '../../../Portfolio/SkolaOne/Login admin.png';
+import SkolaOneLoginGuru from '../../../Portfolio/SkolaOne/login guru.png';
+import SkolaOneLoginWali from '../../../Portfolio/SkolaOne/Login wali.png';
+import RdMomentBuatUndangan from '../../../Portfolio/rdmoment/buatundangan.png';
+import RdMomentDashAdmin from '../../../Portfolio/rdmoment/dashadmin.png';
+import RdMomentDashAdmin1 from '../../../Portfolio/rdmoment/dashadmin1.png';
+import RdMomentDashAdmin2 from '../../../Portfolio/rdmoment/dashadmin2.png';
+import RdMomentDashAdmin3 from '../../../Portfolio/rdmoment/dashadmin3.png';
+import RdMomentDashAdmin4 from '../../../Portfolio/rdmoment/dashadmin4.png';
+import RdMomentDashboard from '../../../Portfolio/rdmoment/dashboard.png';
+import RdMomentDashboard2 from '../../../Portfolio/rdmoment/dashboard2.png';
+import RdMomentDashboard3 from '../../../Portfolio/rdmoment/dashboard3.png';
+import RdMomentDashboard4 from '../../../Portfolio/rdmoment/dashboard4.png';
+import RdMomentDashboard5 from '../../../Portfolio/rdmoment/dashboard5.png';
+import RdMomentDashboard6 from '../../../Portfolio/rdmoment/dashboard6.png';
+import RdMomentDashboard7 from '../../../Portfolio/rdmoment/dashboard7.png';
+import RdMomentGaleriTemplate from '../../../Portfolio/rdmoment/galeri template.png';
+import RdMomentLoginAdmin from '../../../Portfolio/rdmoment/loginadmin.png';
 import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 
 export const allProjects = [
   {
-    id: 1,
-    img: PortfolioImg1,
-    title: 'Sales Prediction Model',
-    category: 'Machine Learning',
-    description: 'A machine learning model built to forecast sales figures based on historical data trends, helping businesses optimize inventory and marketing strategies.',
-    technologies: ['Python', 'Scikit-learn', 'Pandas', 'TensorFlow'],
-    github: '#',
-    live: '#',
-  },
-  {
-    id: 2,
-    img: PortfolioImg2,
-    title: 'Interactive Data Dashboard',
-    category: 'Data Analysis',
-    description: 'A web-based dashboard for real-time visualization and exploration of complex datasets, enabling users to uncover insights through interactive charts and filters.',
-    technologies: ['React', 'D3.js', 'Node.js', 'SQL'],
-    github: '#',
-    live: '#',
-  },
-  {
-    id: 3,
-    img: PortfolioImg3,
-    title: 'Automated Reporting Tool',
+    id: 4,
+    img: SkolaOneLoginAdmin,
+    title: 'SkolaOne - School Management System',
     category: 'Web Development',
-    description: 'A custom tool developed with Excel VBA to automate the generation of weekly financial reports from raw data, saving hours of manual work.',
-    technologies: ['VBA', 'Excel', 'SQL'],
+    description: 'A comprehensive web-based school management system featuring separate dashboards for administrators, teachers, and guardians.',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
+    github: 'https://github.com/rdmfr/skolaone',
+    live: '#',
+    gallery: [
+      SkolaOneDashAdmin,
+      SkolaOneDashAdmin1,
+      SkolaOneDashAdmin2,
+      SkolaOneDashAdmin3,
+      SkolaOneDashGuru,
+      SkolaOneDashWali,
+      SkolaOneLoginAdmin,
+      SkolaOneLoginGuru,
+      SkolaOneLoginWali,
+    ]
+  },
+  {
+    id: 5,
+    img: RdMomentDashboard,
+    title: 'RdMoment - Company Website',
+    category: 'Web Development',
+    description: 'A company profile website for a wedding invitation business.',
+    technologies: ['React', 'Vite', 'TailwindCSS'],
+    github: 'https://github.com/rdmfr/rdmoment',
+    live: 'https://rdmoment.vercel.app/',
+    gallery: [
+        RdMomentDashboard,
+        RdMomentBuatUndangan,
+        RdMomentDashAdmin,
+        RdMomentDashAdmin1,
+        RdMomentDashAdmin2,
+        RdMomentDashAdmin3,
+        RdMomentDashAdmin4,
+        RdMomentDashboard2,
+        RdMomentDashboard3,
+        RdMomentDashboard4,
+        RdMomentDashboard5,
+        RdMomentDashboard6,
+        RdMomentDashboard7,
+        RdMomentGaleriTemplate,
+        RdMomentLoginAdmin,
+    ]
+  },
+  {
+    id: 6,
+    img: 'https://source.unsplash.com/fyeOxvYvIyY',
+    title: 'BERT Sentiment Analysis for Elden Ring',
+    category: 'Data Analysis',
+    description: 'This study focuses on sentiment analysis of Elden Ring reviews using the BERT model. The results show a dominant positive sentiment, with BERT achieving 99% accuracy in the classification task.',
+    technologies: ['Python', 'BERT', 'Pandas', 'Scikit-learn'],
+    github: 'https://www.researchgate.net/publication/394263899_Optimalisasi_Pengalaman_Pengguna_Game_Elden_Ring_Melalui_Analisis_Sentimen_Berbasis_BERT',
+    live: 'https://www.researchgate.net/publication/394263899_Optimalisasi_Pengalaman_Pengguna_Game_Elden_Ring_Melalui_Analisis_Sentimen_Berbasis_BERT',
+  },
+  {
+    id: 7,
+    img: 'https://source.unsplash.com/mcSDtbWXUZU',
+    title: 'Excel VBA Automation',
+    category: 'VBA Development',
+    description: 'Developed various automation scripts using Excel VBA for financial reporting, stock management, and other business processes to improve efficiency and reduce manual work.',
+    technologies: ['Excel', 'VBA', 'SQL'],
     github: '#',
     live: '#',
   },
@@ -43,6 +102,7 @@ export const allProjects = [
 const Portfolio = () => {
   const [filter, setFilter] = useState('All');
   const [modalData, setModalData] = useState(null);
+  const [currentModalImage, setCurrentModalImage] = useState(null);
 
   const filteredProjects = filter === 'All' 
     ? allProjects 
@@ -50,10 +110,16 @@ const Portfolio = () => {
 
   const openModal = (project) => {
     setModalData(project);
+    setCurrentModalImage(project.img);
   };
 
   const closeModal = () => {
     setModalData(null);
+    setCurrentModalImage(null);
+  };
+
+  const handleGalleryImageClick = (image) => {
+    setCurrentModalImage(image);
   };
 
   return (
@@ -66,7 +132,7 @@ const Portfolio = () => {
               <button onClick={() => setFilter('All')} className={filter === 'All' ? 'active' : ''}>All</button>
               <button onClick={() => setFilter('Web Development')} className={filter === 'Web Development' ? 'active' : ''}>Web Development</button>
               <button onClick={() => setFilter('Data Analysis')} className={filter === 'Data Analysis' ? 'active' : ''}>Data Analysis</button>
-              <button onClick={() => setFilter('Machine Learning')} className={filter === 'Machine Learning' ? 'active' : ''}>Machine Learning</button>
+              <button onClick={() => setFilter('VBA Development')} className={filter === 'VBA Development' ? 'active' : ''}>VBA Development</button>
             </div>
           </div>
 
@@ -92,11 +158,27 @@ const Portfolio = () => {
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <button className="modal-close" onClick={closeModal}><FaTimes /></button>
               <div className="modal-header">
-                <img src={modalData.img} alt={modalData.title} className="modal-image" />
+                <img src={currentModalImage} alt={modalData.title} className="modal-image" />
               </div>
               <div className="modal-body">
                 <h2>{modalData.title}</h2>
                 <p>{modalData.description}</p>
+                {modalData.gallery && (
+                  <div className="modal-gallery">
+                    <h4>Project Gallery</h4>
+                    <div className="gallery-grid">
+                      {modalData.gallery.map((image, index) => (
+                        <img 
+                          key={index} 
+                          src={image} 
+                          alt={`${modalData.title} - screenshot ${index + 1}`} 
+                          className={`gallery-image ${currentModalImage === image ? 'active' : ''}`}
+                          onClick={() => handleGalleryImageClick(image)}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
                 <div className="modal-technologies">
                   <h4>Technologies Used:</h4>
                   <div>

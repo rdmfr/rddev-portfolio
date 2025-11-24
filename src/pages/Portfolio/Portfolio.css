@@ -156,10 +156,39 @@
     margin-bottom: 2rem;
 }
 
-.modal-technologies h4 {
+.modal-technologies, .modal-gallery {
+    margin-bottom: 2rem;
+}
+
+.modal-technologies h4, .modal-gallery h4 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
 }
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-image {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.gallery-image.active {
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
 
 .tech-tag {
     background: rgba(0, 123, 255, 0.1);

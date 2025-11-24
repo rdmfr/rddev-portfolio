@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import '../Portfolio/Portfolio.css';
 import AnimatedPage from '../../components/AnimatedPage';
 import { Link } from 'react-router-dom';
 import ProfilePic from '../../assets/profile-pic.jpeg';
@@ -68,7 +69,7 @@ const Home = () => {
       <section className="featured-projects-section">
         <div className="container">
           <h2 className="section-title">Featured Projects</h2>
-          <div className="featured-projects-grid">
+          <div className="portfolio-grid">
             {allProjects.slice(0, 3).map((project) => (
               <div className="portfolio-card" key={project.id}>
                 <div className="portfolio-image">
